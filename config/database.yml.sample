@@ -1,0 +1,29 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: team_michigan_development
+  pool:     5
+  username: postgres
+  password:
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: team_michigan_test
+  pool:     5
+  username: postgres
+  password:
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: team_michigan_production
+  pool:     5
+  username: postgres
+  password:
+  template: template0
