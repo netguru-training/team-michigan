@@ -4,3 +4,4 @@ Write your app description here
 
 Authors
 -Mateusz Piechowiak
+-Pawel Licznar
