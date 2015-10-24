@@ -10,8 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    binding.pry
-    user.add_role :student
+    @user.add_role :student
+    @user.save
   end
 
   # GET /resource/edit
