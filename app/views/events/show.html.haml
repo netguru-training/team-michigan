@@ -1,0 +1,18 @@
+%h1 
+	= event.name
+%h3
+	= event.description
+%table
+	%tr
+		%th= t('Place:')
+	%tr
+		%td= event.place
+	%tr
+		%th= t('Date:')
+	%tr
+		%td= event.start_time
+	%tr
+		%th= t('Request deadline:')
+	%tr
+		%td= event.user_deadline
+			
