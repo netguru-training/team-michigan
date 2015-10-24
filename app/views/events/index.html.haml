@@ -8,6 +8,7 @@
       %th= 'Date'
       %th= 'Deadline'
       %th= 'Slots'
+      %th
   %tbody
     - events.each do |event|
       %tr
@@ -16,3 +17,4 @@
         %td= event.start_time
         %td= event.user_deadline
         %td= event.slots
+        %td= link_to 'Show', event
