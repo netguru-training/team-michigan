@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+	expose(:events)
 	expose(:event, attributes: :event_params)
 
 	# def new

@@ -1,2 +1,18 @@
 %h1 Index
 = link_to 'New Event', new_event_path, class: "btn btn-success"
+%table.table.table-condensed
+  %thead
+    %tr
+      %th= 'Event'
+      %th= 'Place'
+      %th= 'Date'
+      %th= 'Deadline'
+      %th= 'Slots'
+  %tbody
+    - events.each do |event|
+      %tr
+        %td= event.name
+        %td= event.place
+        %td= event.start_time
+        %td= event.user_deadline
+        %td= event.slots
