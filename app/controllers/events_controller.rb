@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 	# end
 
 	def create
+		binding.pry
 		if event.save
 			redirect_to(event)
 		else

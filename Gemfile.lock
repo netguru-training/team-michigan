@@ -144,6 +144,7 @@ GEM
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-datetimepicker-rails (2.4.1.0)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -303,6 +304,7 @@ DEPENDENCIES
   haml-rails
   html2haml
   jbuilder (~> 2.0)
+  jquery-datetimepicker-rails
   jquery-rails
   launchy
   pg

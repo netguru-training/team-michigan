@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'activeadmin', github: 'activeadmin'
 gem 'decent_exposure'
 gem "rolify"
+gem 'jquery-datetimepicker-rails'
 
 group :development do
   gem 'better_errors'
