@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
 
-	expose(:events)
 	expose(:event, attributes: :event_params)
+
+	# def new
+	# end
 
 	def create
 		if event.save
@@ -22,7 +24,7 @@ class EventsController < ApplicationController
 	private
 
 	def event_params
-		params.require(:event).permit(:place, :start_time, :users_deadline, :name, :description, :slots)
+		params.require(:event).permit(:place, :start_time, :user_deadline, :name, :description, :slots)
 	end
 
 end
