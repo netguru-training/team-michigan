@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   resourcify :has_one, role_cname: "Role"
+  has_many :events
 end
