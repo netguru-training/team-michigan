@@ -1,3 +1,21 @@
+GIT
+  remote: git://github.com/activeadmin/activeadmin.git
+  revision: 1abec286611c15cf8087131abcf37fce7b7812fd
+  specs:
+    activeadmin (1.0.0.pre2)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.15)
+      rails (>= 3.2, < 5.0)
+      ransack (~> 1.3)
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,6 +55,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    arbre (1.0.3)
+      activesupport (>= 3.0.0)
     arel (6.0.3)
     autoprefixer-rails (6.0.3)
       execjs
@@ -51,6 +71,9 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bourbon (4.2.6)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.2)
     byebug (6.0.2)
     capybara (2.5.0)
@@ -89,6 +112,9 @@ GEM
     faker (1.5.0)
       i18n (~> 0.5)
     ffi (1.9.10)
+    formtastic (3.1.3)
+      actionpack (>= 3.2.13)
+    formtastic_i18n (0.4.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -99,12 +125,20 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    has_scope (0.6.0)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
+      has_scope (~> 0.6.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     interception (0.5)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -113,7 +147,12 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     loofah (2.0.3)
@@ -129,6 +168,8 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.3)
+    polyamorous (1.2.0)
+      activerecord (>= 3.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -169,6 +210,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    ransack (1.7.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.3.2)
@@ -240,6 +287,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin!
   better_errors
   bootstrap-sass
   byebug
@@ -268,3 +316,6 @@ DEPENDENCIES
   spring-commands-rspec
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6

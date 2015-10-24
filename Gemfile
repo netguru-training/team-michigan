@@ -13,6 +13,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development do
   gem 'better_errors'
