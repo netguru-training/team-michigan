@@ -1,4 +1,4 @@
-%h1 
+%h1
 	= event.name
 %h3
 	= event.description
@@ -20,5 +20,6 @@
 	%tr
 		%td= event.slots
 
-%a
-	Request for Event
+-if user_signed_in?
+	= link_to 'Request for Event', '#', class: "btn btn-success"
+
