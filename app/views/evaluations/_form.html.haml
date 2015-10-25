@@ -1,0 +1,6 @@
+= simple_form_for evaluation, url: evaluations_path(evaluation, parameters: {event_id: evaluation.event.id, user_id: evaluation.user_id}) do |f|
+  = f.input :reading
+  = f.input :writing
+  = f.input :listening
+  = link_to 'Back', events_path
+  = f.submit 'Add Event', class: "btn btn-success"
