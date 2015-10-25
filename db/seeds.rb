@@ -36,9 +36,14 @@ teacher.save
     user_deadline: Faker::Date.between(2.days.since, 35.days.since),
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.sentences,
-    slots: Faker::Number.between(10, 30)
+    slots: Faker::Number.between(10, 30),
+    user: teacher
   )
   event.save
+end
+
+User.all.each do |user|
+  Event.first.users << user if user.has_role? :student
 end
 
 puts 'Seeds: done'
