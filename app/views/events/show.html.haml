@@ -21,7 +21,7 @@
     %td= event.slots
 
 -if user_signed_in?
-  = link_to 'Request for Event', 'requests_path', class: "btn btn-success"
+	= link_to 'Request for Event', requests_path(event: event), class: "btn btn-success", method: :post
 
 %br
 %br
