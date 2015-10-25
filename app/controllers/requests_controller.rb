@@ -16,4 +16,15 @@ class RequestsController < ApplicationController
 
     redirect_to event_path(params['event'])
   end
+
+  def update
+    request = Request.find(params['obj'])
+    status = params['status']
+    request.status = status
+    request.save
+    event = Event.find(params['event'])
+    redirect_to event_path(params['event'])
+
+  end
+
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
 
   post 'requests' => 'requests#create'
+  put 'requests' => 'requests#update'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

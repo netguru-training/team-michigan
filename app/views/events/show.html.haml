@@ -42,8 +42,9 @@
             -event.requests.pending.each do |request|
               %tr
                 %td= request.user.email
-                %td= link_to 'Accept', '#', class: 'btn btn-info'
-                %td= link_to 'Reject', '#', class: 'btn btn-danger'
+                / %td= link_to 'Accept', , class: 'btn btn-info'
+                %td= link_to("Accept", requests_path(request, obj: request,  status: "accepted", event: event), :method => :put, class: 'btn btn-danger')
+                %td= link_to("Reject", requests_path(request, obj: request,  status: "rejected", event: event), :method => :put, class: 'btn btn-danger')
       .col-md-3
         %h3 Accepted requests
         %table.table.table-condensed
