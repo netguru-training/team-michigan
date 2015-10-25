@@ -5,4 +5,9 @@ class Evaluation < ActiveRecord::Base
   validates :reading, inclusion: 1..10
   validates :writing, inclusion: 1..10
   validates :listening, inclusion: 1..10
+
+  def sum
+  	reading + writing + listening
+  end
+
 end
