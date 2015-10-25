@@ -19,7 +19,7 @@
     %th= t('Empty slots:')
   %tr
     %td= event.slots
-  -if evaluation_for_student_exist?(event)
+  -if evaluation_for_logged_student_exist?(event)
     %tr
       %th= t('Evaluation for reading:')
     %tr
