@@ -65,7 +65,7 @@
             -event.requests.pending.each do |request|
               %tr
                 %td= request.user.email
-                %td= link_to("Accept", requests_path(request, obj: request,  status: "accepted", event: event), :method => :put, class: 'btn btn-danger')
+                %td= link_to("Accept", requests_path(request, obj: request,  status: "accepted", event: event), :method => :put, class: 'btn btn-primary')
                 %td= link_to("Reject", requests_path(request, obj: request,  status: "rejected", event: event), :method => :put, class: 'btn btn-danger')
       .col-md-3
         %h3 Accepted requests
@@ -78,8 +78,7 @@
             -event.requests.accepted.each do |request|
               %tr
                 %td= request.user.email
-                -if Time.now > event.start_time
-                  %td= link_to 'Add note', new_evaluation_path(request: request), class: 'btn btn-danger'
+                %td= link_to 'Add note', new_evaluation_path(request: request), class: 'btn btn-danger'
       .col-md-3
         %h3 Rejected requests
         %table.table.table-condensed
