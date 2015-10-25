@@ -3,9 +3,11 @@
   %thead
     %tr
       %th= 'Event'
-      %th= 'Status'
+      -if current_user.has_role? :student
+        %th= 'Status'
   %tbody
     - events.each do |event|
       %tr
         %td= link_to event.name, event
-        %td= evaluation_status(event)
+        -if current_user.has_role? :student
+          %td= evaluation_status(event)
