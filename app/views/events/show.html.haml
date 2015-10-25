@@ -33,7 +33,6 @@
     %tr
       %td= evaluation(event).listening
 
-
 -if user_signed_in? && current_user != event.user
 
   -if event.students.include?(current_user)
@@ -42,12 +41,10 @@
     %h3 Sorry, event is full :(
   -else
     = link_to 'Request for Event', requests_path(event: event), class: "btn btn-success", method: :post
-- else
-  = link_to 'Log in to join event!', new_user_session_path, class: 'btn btn-success'
 
-- if user_signed_in? && current_user == event.user
+- if current_user == event.user
 
-= link_to 'Edit', edit_event_path(event), class: "btn btn-success"
+  = link_to 'Edit', edit_event_path(event), class: "btn btn-success"
 
   %h1 Requests List
   %br
@@ -89,3 +86,5 @@
             -event.requests.rejected.each do |request|
               %tr
                 %td= request.user.email
+- unless user_signed_in?
+  = link_to 'Log in to join event!', new_user_session_path, class: 'btn btn-success'
