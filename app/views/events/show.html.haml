@@ -1,25 +1,43 @@
 %h1
-	= event.name
+  = event.name
 %h3
-	= event.description
+  = event.description
 %table
-	%tr
-		%th= t('Place:')
-	%tr
-		%td= event.place
-	%tr
-		%th= t('Date:')
-	%tr
-		%td= event.start_time
-	%tr
-		%th= t('Request deadline:')
-	%tr
-		%td= event.user_deadline
-	%tr
-		%th= t('Empty slots:')
-	%tr
-		%td= event.slots
+  %tr
+    %th= t('Place:')
+  %tr
+    %td= event.place
+  %tr
+    %th= t('Date:')
+  %tr
+    %td= event.start_time
+  %tr
+    %th= t('Request deadline:')
+  %tr
+    %td= event.user_deadline
+  %tr
+    %th= t('Empty slots:')
+  %tr
+    %td= event.slots
 
 -if user_signed_in?
-	= link_to 'Request for Event', 'requests_path', class: "btn btn-success"
+  = link_to 'Request for Event', 'requests_path', class: "btn btn-success"
 
+%br
+%br
+
+%h1 Requests List
+%br
+
+%table.table.table-condensed
+  %thead
+    %tr
+      %th= 'User'
+      %th= 'Status'
+
+
+  %tbody
+    -event.requests.each do |request|
+      %tr
+        %td= request.user.email
+        %td= request.status
