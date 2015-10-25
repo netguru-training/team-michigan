@@ -12,10 +12,11 @@ class EvaluationsController < ApplicationController
     evaluation.user_id = params[:parameters][:user_id]
     if evaluation.save
       flash[:notice] = 'User evaluated successfully'
+      redirect_to event_path(evaluation.event)
     else
       flash[:danger] = 'Something went wrong'
+      render 'evaluations/new'
     end
-    redirect_to event_path(evaluation.event)
   end
 
   private
