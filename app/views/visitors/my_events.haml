@@ -1,0 +1,6 @@
+%h1 Your events:
+
+%ul
+	- events.each do |event|
+		%li
+			= link_to event.name, event

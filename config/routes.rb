@@ -15,4 +15,6 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
 
+  get 'myevents' => 'visitors#my_events'
+
 end
