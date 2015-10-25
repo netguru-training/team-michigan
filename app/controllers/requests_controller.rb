@@ -15,7 +15,6 @@ class RequestsController < ApplicationController
     redirect_to event_path(params['event'])
   end
 
-<<<<<<< Updated upstream
   def update
     request = Request.find(params['obj'])
     status = params['status']
@@ -23,8 +22,8 @@ class RequestsController < ApplicationController
     request.save
     event = Event.find(params['event'])
     redirect_to event_path(params['event'])
+  end
 
-=======
   def destroy
     if event.students.include?(current_user)
       event.slots += 1
@@ -42,7 +41,6 @@ class RequestsController < ApplicationController
 
   def event
     @event ||= Event.find(params['event'])
->>>>>>> Stashed changes
   end
 
 end
