@@ -55,7 +55,7 @@
             -event.requests.accepted.each do |request|
               %tr
                 %td= request.user.email
-                %td= link_to 'Add note', "#", class: 'btn btn-danger'
+                %td= link_to 'Add note', new_evaluation_path(request: request), class: 'btn btn-danger'
       .col-md-3
         %h3 Rejected requests
         %table.table.table-condensed
