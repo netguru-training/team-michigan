@@ -21,10 +21,12 @@
     %td= event.slots
 
 -if user_signed_in? && current_user != event.user
-  -if event.students.include?(current_user)
-    = link_to 'Request for Event', requests_path(event: event), class: "btn btn-success", method: :post
-  -else
+  -if event.slots == 0
+    %p Sorry, event is full :(
+  -elsif event.students.include?(current_user)
     = link_to 'Undo Request', requests_path(event: event), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }
+  -else
+    = link_to 'Request for Event', requests_path(event: event), class: "btn btn-success", method: :post
 - else
   %h3 Log in to join event!
 
