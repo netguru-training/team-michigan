@@ -10,11 +10,11 @@ class EvaluationsController < ApplicationController
   def create
     evaluation.event_id = params[:parameters][:event_id]
     evaluation.user_id = params[:parameters][:user_id]
-    if evaluation.save
+    if Evaluation.where(event: evaluation.event, user: evaluation.user).empty? && evaluation.save
       flash[:notice] = 'User evaluated successfully'
       redirect_to event_path(evaluation.event)
     else
-      flash[:danger] = 'Something went wrong'
+      flash[:danger] = 'Note already exist'
       render 'evaluations/new'
     end
   end
