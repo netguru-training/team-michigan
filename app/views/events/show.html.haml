@@ -31,6 +31,9 @@
   %h3 Log in to join event!
 
 - if user_signed_in? && current_user == event.user
+
+= link_to 'Edit', edit_event_path(event), class: "btn btn-success"
+
   %h1 Requests List
   %br
 
@@ -47,7 +50,6 @@
             -event.requests.pending.each do |request|
               %tr
                 %td= request.user.email
-                / %td= link_to 'Accept', , class: 'btn btn-info'
                 %td= link_to("Accept", requests_path(request, obj: request,  status: "accepted", event: event), :method => :put, class: 'btn btn-danger')
                 %td= link_to("Reject", requests_path(request, obj: request,  status: "rejected", event: event), :method => :put, class: 'btn btn-danger')
       .col-md-3
@@ -56,12 +58,13 @@
           %thead
             %tr
               %th= 'User'
-              %th= 'User'
+              %th
           %tbody
             -event.requests.accepted.each do |request|
               %tr
                 %td= request.user.email
-                %td= link_to 'Add note', new_evaluation_path(request: request), class: 'btn btn-danger'
+                -if Time.now > event.start_time
+                  %td= link_to 'Add note', new_evaluation_path(request: request), class: 'btn btn-danger'
       .col-md-3
         %h3 Rejected requests
         %table.table.table-condensed

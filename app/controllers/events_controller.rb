@@ -18,11 +18,11 @@ class EventsController < ApplicationController
 	end
 
 	def edit
-		if event.save
-			redirect_to(event)
-		else
-			render :edit
-		end
+	end
+
+	def update
+		event.save
+		redirect_to(event)
 	end
 
 	private
