@@ -22,8 +22,9 @@
 
 -if user_signed_in? && current_user != event.user
   = link_to 'Request for Event', requests_path(event: event), class: "btn btn-success", method: :post
+  = link_to 'Undo Request', requests_path(event: event), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }
 - else
-  %h3 Log in to join evet!
+  %h3 Log in to join event!
 
 - if user_signed_in? && current_user == event.user
   %h1 Requests List
