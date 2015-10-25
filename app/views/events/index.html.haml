@@ -1,5 +1,7 @@
 %h1 Index
-= link_to 'New Event', new_event_path, class: "btn btn-success"
+-if user_signed_in? && (current_user.has_role? :teacher)
+  = link_to 'New Event', new_event_path, class: "btn btn-success"
+
 %table.table.table-condensed
   %thead
     %tr
