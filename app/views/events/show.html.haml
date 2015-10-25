@@ -19,6 +19,20 @@
     %th= t('Empty slots:')
   %tr
     %td= event.slots
+  -if evaluation_for_student_exist?(event)
+    %tr
+      %th= t('Evaluation for reading:')
+    %tr
+      %td= evaluation(event).reading
+    %tr
+      %th= t('Evaluation for writing:')
+    %tr
+      %td= evaluation(event).writing
+    %tr
+      %th= t('Evaluation for listening:')
+    %tr
+      %td= evaluation(event).listening
+
 
 -if user_signed_in? && current_user != event.user
   -if event.slots == 0
