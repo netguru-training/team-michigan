@@ -20,7 +20,7 @@
   %tr
     %td= event.slots
 
--if user_signed_in?
+-if user_signed_in? && current_user != event.user
   = link_to 'Request for Event', requests_path(event: event), class: "btn btn-success", method: :post
 - else
   %h3 Log in to join evet!
@@ -55,7 +55,7 @@
             -event.requests.accepted.each do |request|
               %tr
                 %td= request.user.email
-                %td= link_to 'Add note', '#', class: 'btn btn-danger'
+                %td= link_to 'Add note', "#", class: 'btn btn-danger'
       .col-md-3
         %h3 Rejected requests
         %table.table.table-condensed
